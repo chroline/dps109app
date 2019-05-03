@@ -1,0 +1,227 @@
+@import "main"
+
+$red: #d32f2f
+$orange: #ff6d00
+$yellow: #ffab00
+$green: #2e7d32
+$teal: #009688
+$blue: #1e88e5
+$indigo: #1a237e
+$purple: #4527a0
+$grey: #37474f
+
+.body 
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 5
+
+.background
+  width: 100%
+  height: 100%
+  z-index: 0
+  position: absolute
+  top: 0
+  .layer1
+    background: url("../imgs/1.jpg")
+    width: 100%
+    height: 400px
+    position: absolute
+    top: 0
+    opacity: 0.2
+    background-size: cover
+    background-position: center
+    filter: contrast(1.2) grayscale(1) blur(0px)
+    transform: scale(1)
+  .layer2, .layer0
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+  .layer2
+    background: black
+  .layer0
+    opacity: 0.6
+    background: #c62828
+
+
+.content *
+  color: black !important
+  font-weight: 700
+  font-size: 1.5rem
+
+header
+  padding: 1.9375rem
+  padding-bottom: calc(1.9375rem + 30px)
+  width: 100%
+  h1
+    padding: 0
+    margin: 0
+    margin-left: 0
+
+.navbar
+  color: black
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  background: white
+  padding-left: 0
+  padding-right: 0
+  z-index: 0
+  &.show
+    z-index: 9
+  .navbar-brand
+    margin-left: 0.9375rem
+    opacity: 0.8
+    padding-bottom: 0.15625rem
+  button
+    opacity: 0.8 !important
+
+.navbar-toggler
+  padding: 0 0.9375rem
+  box-sizing: content-box
+
+#title
+  font-weight: 700
+  color: white
+  margin: 6.9375rem 0 5.875rem 0
+  font-size: 2.5rem
+
+.navbar-collapse
+  background: white
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+  *
+    color: black !important
+
+.content
+  width: 100%
+  padding-left: 2.875rem
+  padding-right: 2.875rem
+  height: 100%
+  position: absolute
+  z-index: 1
+  overflow: hidden
+  background: white
+  border-radius: 10px
+  margin-top: -10px
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  top: 55%
+  .favorites
+    height: calc(45% - 50px)
+    width: 100%
+    h2
+      font-size: 1.5rem
+      margin-bottom: 1rem
+    button
+      display: inline-block
+      float: left
+      height: calc(33% - 20px - 0.833rem)
+      width: calc(50% - 10px)
+      margin: 10px 5px
+      font-weight: 500
+      font-size: 1rem
+      border-radius: 5px
+      transition: all .5s
+      &.red
+        background: rgba($red, 0.2)
+        border: $red 2px solid
+        color: $red !important
+        &:hover
+          background: $red
+          color: white !important
+      &.orange
+        background: rgba($orange, 0.2)
+        border: $orange 2px solid
+        color: $orange !important
+        &:hover
+          background: $orange
+          color: white !important
+      &.green
+        background: rgba($green, 0.2)
+        border: $green 2px solid
+        color: $green !important
+        &:hover
+          background: $green
+          color: white !important
+      &.teal
+        background: rgba($teal, 0.2)
+        border: $teal 2px solid
+        color: $teal !important
+        &:hover
+          background: $teal
+          color: white !important
+      &.blue
+        background: rgba($blue, 0.2)
+        border: $blue 2px solid
+        color: $blue !important
+        &:hover
+          background: $blue
+          color: white !important
+      &.indigo
+        background: rgba($indigo, 0.2)
+        border: $indigo 2px solid
+        color: $indigo !important
+        &:hover
+          background: $indigo
+          color: white !important
+      &.purple
+        background: rgba($purple, 0.2)
+        border: $purple 2px solid
+        color: $purple !important
+        &:hover
+          background: $purple
+          color: white !important
+      &.grey
+        background: rgba($grey, 0.2)
+        border: $grey 2px solid
+        color: $grey !important
+        &:hover
+          background: $grey
+          color: white !important
+
+
+#teachers
+  .data
+    display: inline-block
+    width: calc(100% + 5.75rem + 20px)
+    margin-left: calc(-2.875rem - 10px)
+    overflow: scroll
+    padding: 10px
+    margin-top: -10px
+  .t-list
+    height: 100px
+    background: transparent
+    min-width: calc(100% + 40px)
+    border-radius: 20px 0 0 20px
+    margin: 0 2.8755rem
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75)
+
+.grip
+  display: inline-block
+  position: relative
+  left: 50%
+  transform: translate(-50%)
+  cursor: pointer
+  .feather
+    width: 40px
+    height: 40px
+    stroke: #aaa !important
+
+.overlay
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.6)
+  position: fixed
+  top: 0
+  left: 0
+  opacity: 0
+  display: none
+  &.show
+    display: block
+
+.frame 
+  width: 100%
+  height: 100%
+  background: green
+  position: absolute
+  top: 0
+  z-index: -1
+  opacity: 0
