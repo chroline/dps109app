@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
         <!-- Theme CSS -->
@@ -22,16 +21,27 @@
         <meta name="apple-mobile-web-app-title" content="DPS109">
         <meta name="msapplication-starturl" content="/">
         <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="minimum-scale=1, user-scalable=no, width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
     <body>
         <div class="background">
             <div class="layer2"></div>
-            <div class="layer1"></div>
+            <div class="layer1">
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+            </div>
             <div class="layer0"></div>
         </div>
         <div class="body">
             <header>
+                <div class="topbar">
+                    <p><b>Cole Gawin</b></p>
+                    <p><i data-feather="sliders"></i></p>
+                </div>
                 <h1 id="title">District 109</h1>
                 <nav class="navbar navbar-expand-lg navbar-transparent">
                     <div class="container">
@@ -67,6 +77,12 @@
                                     <a class="nav-link" href="https://skyward.iscorp.com/scripts/wsisa.dll/WService=wsfindeerfieldil/seplog01.w" target="_blank">
                                         <i class="fas fa-book-open"></i>
                                         <p class="d-lg-none d-xl-none">Skyward</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item p-0">
+                                    <a class="nav-link" href="https://www.dps109.org/Page/2" target="_blank">
+                                        <i class="fas fa-comment-alt"></i>
+                                        <p class="d-lg-none d-xl-none">Tip Line</p>
                                     </a>
                                 </li>
                                 <li class="nav-item p-0">
@@ -116,7 +132,7 @@
             </header>
             <div class="overlay">
             </div>
-            <div class="content">
+            <div class="content" data-show="false">
                 <div class="grip">
                     <i data-feather="minus"></i>
                 </div>
@@ -126,7 +142,12 @@
                     <button class="red">Walden Elementary</button>
                     <button class="red">Shepard Middle</button>
                 </div>
-                <div class="frame"></div>
+                <div class="frame">
+                    <div class="bar">
+                        <p>Home</p>
+                    </div>
+                    <iframe src="pages/home.html" scrolling="yes" frameborder="0"></iframe>
+                </div>
             </div>
         </div>
         <!-- Core -->
