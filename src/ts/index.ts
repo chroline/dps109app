@@ -4,6 +4,8 @@ var event;
 var ylocation = $(".content")[0].getBoundingClientRect().top;
 var currentSlide = 1;
 
+feather.replace();
+
 function dragUp(yaxis) {
     event = yaxis;
     var firstDrag = false;
@@ -228,3 +230,9 @@ var content = {
 $(".overlay").click(function() {
     content.down();
 });
+
+$(".frame").click(function() {
+    alert();
+});
+
+alert("hey");

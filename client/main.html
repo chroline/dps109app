@@ -1,0 +1,152 @@
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="assets/css/index.css">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700" rel="stylesheet">
+	<!-- Icons -->
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+	<meta name="theme-color" content="#fafafa">
+	<script src="https://unpkg.com/feather-icons"></script>
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="DPS109">
+	<meta name="apple-mobile-web-app-title" content="DPS109">
+	<meta name="msapplication-starturl" content="/">
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+	<meta name="viewport" content="minimum-scale=1, user-scalable=no, width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+	<div class="background">
+		<div class="layer2"></div>
+		<div class="layer1">
+			<div class="pic"></div>
+			<div class="pic"></div>
+			<div class="pic"></div>
+			<div class="pic"></div>
+			<div class="pic"></div>
+			<div class="pic"></div>
+		</div>
+		<div class="layer0"></div>
+	</div>
+	<div class="body">
+		<header>
+			<div class="topbar">
+				<p><b>Cole Gawin</b></p>
+				<p><i data-feather="sliders"></i></p>
+			</div>
+			<h1 id="title">District 109</h1>
+			<nav class="navbar navbar-expand-lg navbar-transparent">
+				<div class="container">
+					<div class="navbar-translate">
+						<p class="navbar-brand">
+							<span>Quick Access</span>
+						</p>
+						<button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<i class="fas fa-bars"></i>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse justify-content-end" id="navigation">
+						<div class="navbar-collapse-header">
+							<div class="row">
+								<div class="col-6 collapse-brand">
+									<a>
+										Quick Access
+									</a>
+								</div>
+								<div class="col-6 collapse-close text-right">
+									<button type="button" class="navbar-toggler" data-toggle="collapse"
+									data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
+									aria-label="Toggle navigation" style="padding-right:0">
+									<i class="fas fa-times-circle"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+						<ul class="navbar-nav">
+							<li class="nav-item p-0">
+								<a class="nav-link" href="https://skyward.iscorp.com/scripts/wsisa.dll/WService=wsfindeerfieldil/seplog01.w" target="_blank">
+									<i class="fas fa-book-open"></i>
+									<p class="d-lg-none d-xl-none">Skyward</p>
+								</a>
+							</li>
+							<li class="nav-item p-0">
+								<a class="nav-link" href="https://www.dps109.org/Page/2" target="_blank">
+									<i class="fas fa-comment-alt"></i>
+									<p class="d-lg-none d-xl-none">Tip Line</p>
+								</a>
+							</li>
+							<li class="nav-item p-0">
+								<a class="nav-link" href="https://www.dps109.org/Page/2" target="_blank">
+									<i class="fas fa-calendar"></i>
+									<p class="d-lg-none d-xl-none">Calendar</p>
+								</a>
+							</li>
+							<li class="dropdown nav-item">
+								<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+									Follow us on social media
+								</a>
+								<div class="dropdown-menu dropdown-with-icons">
+									<a class="dropdown-item" href="https://www.facebook.com/DPS109" target="_blank">
+										<span class="d-lg-none d-xl-none"><i class="fab fa-facebook"></i><p style="
+											vertical-align: middle;
+											margin-top: 2px;
+											display: inline-block;
+										">Facebook</p></span>
+									</a>
+									<a class="dropdown-item" href="https://www.twitter.com/DPS109" target="_blank">
+										<span class="d-lg-none d-xl-none"><i class="fab fa-twitter"></i><p style="
+											vertical-align: middle;
+											margin-top: 2px;
+											display: inline-block;
+										">Twitter</p></span>
+									</a>
+									<a class="dropdown-item" href="https://www.instagram.com/DPS109" target="_blank">
+										<span class="d-lg-none d-xl-none"><i class="fab fa-instagram"></i><p style="
+											vertical-align: middle;
+											margin-top: 2px;
+											display: inline-block;
+										">Instagram</p></span>
+									</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link btn btn-default d-none d-lg-block" href="javascript:void(0)"
+									onclick="scrollToDownload()">
+									<i class="tim-icons icon-cloud-download-93"></i> Download
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="overlay">
+		</div>
+		<div class="content" data-show="false">
+			<div class="grip">
+				<i data-feather="minus"></i>
+			</div>
+			<div class="favorites">
+				<h2>Saved Pages</h2>
+				<button class="orange">Report an Absence</button>
+				<button class="red">Walden Elementary</button>
+				<button class="red">Shepard Middle</button>
+			</div>
+			<div class="frame">
+				<div class="bar">
+					<p>Home</p>
+				</div>
+				<app></app>
+			</div>
+		</div>
+	</div>
+</body>

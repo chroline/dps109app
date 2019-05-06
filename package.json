@@ -1,0 +1,17 @@
+{
+  "name": "meteor-vue-example-routing",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.24.0",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "vue": "^1.0.24",
+    "vue-router": "^0.7.13"
+  }
+}
