@@ -1,15 +1,14 @@
-<template><transition name="fade" appear>
+<template>
   <div class="page1">
     <h1>Page 1</h1>
     <p>You are in the first page</p>
     <nav>
-      <a v-link="{ name:'page1a' }">Page A</a>
-      <a v-link="{ name:'page1b' }">Page B</a>
+      <a>Page A</a>
+      <a>Page B</a>
     </nav>
     <router-view></router-view>
   </div>
-</transition>
-  </template>
+</template>
  
 <style scoped>
 nav {

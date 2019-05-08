@@ -1,5 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import Vue from 'vue'
+import { VueSSR } from 'meteor/akryum:vue-ssr'
+import CreateApp from '../imports/app/config'
+import App from '../imports/app/App.vue'
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+VueSSR.createApp = CreateApp;

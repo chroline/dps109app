@@ -1,3 +1,6 @@
+import 'jquery';
+import 'jquery-ui'
+
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -40,6 +43,9 @@ var ylocation = $(".content")[0].getBoundingClientRect().top;
 var currentSlide = 1;
 feather.replace();
 function dragUp(yaxis) {
+
+        $(".favorites").show();
+        $(".frame").show();
     event = yaxis;
     var firstDrag = false;
     if (gripStartY == null) {
@@ -205,7 +211,8 @@ function slideshow() {
 setInterval(function () {
     slideshow();
 }, 14000);
-var content = {
+
+window.content = {
     up: function () {
         $(".content").data("show", "true");
         $(".content").animate({
@@ -217,6 +224,8 @@ var content = {
         }, 250);
         $(".favorites").css("opacity", 0);
         $(".frame").css("opacity", 1);
+        $(".favorites").hide();
+        $(".frame").show();
     },
     down: function () {
         $(".content").data("show", "false");
@@ -230,13 +239,13 @@ var content = {
         });
         $(".favorites").css("opacity", 1);
         $(".frame").css("opacity", 0);
+        $(".favorites").show();
+        $(".frame").hide();
     }
 };
+
 $(".overlay").click(function () {
     content.down();
 });
-$(".frame").click(function () {
-    alert();
-});
-alert("hey");
+
 //# sourceMappingURL=index.js.map

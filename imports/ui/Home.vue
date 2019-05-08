@@ -1,18 +1,8 @@
-<template>
-  <div class="home">
-    <h1>Welcome Home</h1>
-    <p>Create awesome apps with vuejs &amp; meteor! <a href="https://github.com/Akryum/meteor-vue-component">More info</a></p>
-    <img src="/img/vue.png" class="logo"/><img src="/img/meteor.png" class="logo"/>
-  </div>
+<template class="home">
+    <div class="teachers">
+        <p>Your Teachers</p>
+        <div class="list"></div>
+    </div>
 </template>
 
-<style scoped>
-.home {
-  text-align: center;
-}
-
-img.logo {
-  max-width: 101px;
-  margin: 12px;
-}
-</style>
+<style scoped lang="sass" src="../sass/home.sass"></style>

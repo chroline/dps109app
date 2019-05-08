@@ -16,6 +16,10 @@
  */
 
 
+import $ from 'jquery'
+import 'popper.js'
+import 'bootstrap'
+
 var transparent = true;
 var big_image;
 
