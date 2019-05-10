@@ -17,7 +17,7 @@ Meteor.startup(() => {
 
 	CreateApp();
 
-	$("section").on("touchmove",function(){
+	$("section").on("scroll",function(){
     	if($("section").scrollTop() >= (1.9*rem())) {
         	$(".bar").addClass("backshadow");
     	} else {

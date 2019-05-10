@@ -18667,10 +18667,11 @@ header {
       margin-bottom: 1rem; }
     .content .favorites button {
       display: inline-block;
-      float: left;
-      height: calc(33% - 20px - 0.833rem);
-      width: calc(50% - 10px);
-      margin: 10px 5px;
+      float: left;    
+      height: calc(33% - 10px - 0.833rem);
+      width: calc(50% - 15px);
+      margin: 5px 7.5px;
+      padding: 0 5px;
       font-weight: 500;
       font-size: 1rem;
       border-radius: 5px;
@@ -18831,3 +18832,4 @@ header {
     transform: translate(0, -50%); }
     .topbar p:nth-child(2) svg {
       width: 18px; }
+
