@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 /*
  =========================================================
  * BlkÃ¢â‚¬Â¢ Design System - v1.0.0
@@ -13250,9 +13250,6 @@ hr {
   color: black;
   background-color: rgba(26, 26, 26, 0.5); }
 
-.table > tbody > tr > td {
-  color: rgba(255, 255, 255, 0.7) !important; }
-
 .table > tbody > tr > td .photo {
   height: 30px;
   width: 30px;
@@ -15143,7 +15140,7 @@ textarea.form-control:active {
 .register-page .square-1 {
   height: 300px;
   width: 300px;
-  background-image: url("../../assets/img/square1.png");
+  background-image: url("assets/img/square1.png");
   top: 175px;
   right: 150px;
   opacity: 0.8; }
@@ -15151,7 +15148,7 @@ textarea.form-control:active {
 .register-page .square-2 {
   height: 120px;
   width: 120px;
-  background-image: url("../../assets/img/square2.png");
+  background-image: url("assets/img/square2.png");
   opacity: 0.9;
   top: 310px;
   right: 390px; }
@@ -15159,7 +15156,7 @@ textarea.form-control:active {
 .register-page .square-3 {
   width: 200px;
   height: 200px;
-  background-image: url("../../assets/img/square3.png");
+  background-image: url("assets/img/square3.png");
   opacity: 0.3;
   top: -50px;
   right: 400px; }
@@ -15167,14 +15164,14 @@ textarea.form-control:active {
 .register-page .square-4 {
   height: 200px;
   width: 200px;
-  background-image: url("../../assets/img/square4.png");
+  background-image: url("assets/img/square4.png");
   right: -50px;
   top: 525px; }
 
 .register-page .square-5 {
   height: 150px;
   width: 150px;
-  background-image: url("../../assets/img/square5.png");
+  background-image: url("assets/img/square5.png");
   opacity: 0.5;
   top: 500px;
   right: 470px; }
@@ -15182,7 +15179,7 @@ textarea.form-control:active {
 .register-page .square-6 {
   height: 70px;
   width: 70px;
-  background-image: url("../../assets/img/square5.png");
+  background-image: url("assets/img/square5.png");
   opacity: 0.9;
   top: 105px;
   right: 20px; }
@@ -15190,7 +15187,7 @@ textarea.form-control:active {
 .register-page .square-7 {
   height: 200px;
   width: 200px;
-  background-image: url("../../assets/img/square5.png");
+  background-image: url("assets/img/square5.png");
   left: -100px;
   top: 100px;
   opacity: .4; }
@@ -15198,7 +15195,7 @@ textarea.form-control:active {
 .register-page .square-8 {
   height: 100px;
   width: 100px;
-  background-image: url("../../assets/img/square1.png");
+  background-image: url("assets/img/square1.png");
   left: 300px;
   top: 400px;
   opacity: .4; }
@@ -15207,7 +15204,7 @@ textarea.form-control:active {
 .landing-page,
 .profile-page,
 .register-page {
-  background-image: url("../../assets/img/dots.png");
+  background-image: url("assets/img/dots.png");
   background-size: contain; }
 
 @media (max-width: 991.98px) {
@@ -15749,7 +15746,7 @@ hr.line-deafult {
 .section-signup .square-1 {
   height: 300px;
   width: 300px;
-  background-image: url("../../assets/img/square1.png");
+  background-image: url("assets/img/square1.png");
   top: 80px;
   left: 100px;
   opacity: 0.3;
@@ -15759,7 +15756,7 @@ hr.line-deafult {
 .section-signup .square-2 {
   height: 200px;
   width: 200px;
-  background: url("../../assets/img/square3.png");
+  background: url("assets/img/square3.png");
   background-size: cover;
   bottom: 40px;
   left: 600px;
@@ -15770,7 +15767,7 @@ hr.line-deafult {
 .section-signup .square-3 {
   height: 100px;
   width: 100px;
-  background: url("../../assets/img/square2.png");
+  background: url("assets/img/square2.png");
   background-size: cover;
   top: 300px;
   left: 700px;
@@ -15780,7 +15777,7 @@ hr.line-deafult {
 .section-signup .square-4 {
   height: 250px;
   width: 250px;
-  background: url("../../assets/img/square3.png");
+  background: url("assets/img/square3.png");
   background-size: cover;
   top: 0px;
   right: 100px;
@@ -18544,7 +18541,7 @@ input.datetimepicker[data-color="yellow"] + .bootstrap-datetimepicker-widget.dro
 .card-chart .dropdown .btn {
   margin: 0; }
 
-/*# sourceMappingURL=kit-free.css.map */
+/*# sourceMappingURL_DISABLED=kit-free.css.map */
 html, body {
   position: absolute;
   background: white;
@@ -18561,6 +18558,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: 5; }
+
+.body {
+  height: 100%;
+}
 
 .background {
   width: 100%;
@@ -18603,7 +18604,9 @@ body {
 header {
   padding: 1.9375rem;
   padding-bottom: calc(1.9375rem + 30px);
-  width: 100%; }
+  width: 100%; 
+  height: 55%;
+  position: absolute;}
   header h1 {
     padding: 0;
     margin: 0;
@@ -18617,7 +18620,11 @@ header {
   background: white;
   padding-left: 0;
   padding-right: 0;
-  z-index: 0; }
+  z-index: 0; 
+  position: absolute;
+  bottom: 2rem;
+  width: calc(100% - 1.9375rem - 1.9375rem);
+  left: 1.9375rem;}
   .navbar.show {
     z-index: 9; }
   .navbar .navbar-brand {
@@ -18635,8 +18642,11 @@ header {
 #title {
   font-weight: 700;
   color: white;
-  margin: 6.9375rem 0 5.875rem 0;
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  position: absolute;
+  top: 45%;
+  transform: translate(0,-50%);
+  }
 
 .navbar-collapse {
   background: white;
@@ -18649,7 +18659,7 @@ header {
   width: 100%;
   padding-left: 2.875rem;
   padding-right: 2.875rem;
-  height: 100%;
+  height: calc(100% - 50px);
   position: absolute;
   z-index: 1;
   overflow: hidden;
@@ -18790,20 +18800,32 @@ header {
     width: 100%;
     height: 100%; }
   .frame .bar {
-    background: white;
     width: 100%;
     padding: 40px 2.875rem 1rem 2.875rem;
     position: relative;
     z-index: 1; 
     transition: all .5s;}
     .frame .bar.backshadow {
-
+    background: white !important;
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     }
+    .frame .bar.transparent {
+      background: transparent;
+    }
+    .frame .bar.transparent * {
+      color: white;
+    }
     .frame .bar p {
       font-size: 1.3rem;
-      margin: 0; }
+      margin: 0;}
+    .frame .bar .star {
+      font-size: 1.3rem;
+      margin: 0;
+      display: inline-block;
+      position: absolute;
+      top: 40px;
+      right: 2.875rem;}
 
 .topbar {
   width: 100%;
@@ -18832,4 +18854,3 @@ header {
     transform: translate(0, -50%); }
     .topbar p:nth-child(2) svg {
       width: 18px; }
-

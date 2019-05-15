@@ -1,8 +1,8 @@
 <template>
-	<main>
-      <transition :name="transitionName" v-on:before-enter="debug" v-on:before-leave="debug">
-        <router-view/>
-      </transition>
+  <main>
+    <transition :name="transitionName">
+      <router-view />
+    </transition>
   </main>
 </template>
 
@@ -16,12 +16,8 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.transitionName = "next";
-    }
-  },
-  methods: {
-    debug() {
-      //debugger
+      console.log(this.$route.params.prev);
+      this.transitionName = !this.$route.params.prev ? "next" : "prev";
     }
   }
 };
@@ -29,26 +25,28 @@ export default {
 
 <style>
 main {
-  height: calc(100% - 110px - 2.3rem);
+  height: calc(100% - 10px);
+  width: 100%;
   display: grid;
   grid-template: "main";
   flex: 1;
   background-color: white;
-  position: relative;
+  position: absolute;
+  top: 0;
   z-index: 0;
   overflow-x: hidden;
 }
 
-main > div {
-	position: absolute;
-	z-index:0;
-	background: white;
-	width: 100%;
-	height: 100%;
+main > section {
+  position: absolute;
+  z-index: 0;
+  background: white;
+  width: 100%;
+  height: 100%;
 }
 
 main > :first-child {
-    z-index: 1;
+  z-index: 1;
 }
 
 /* Transitions */

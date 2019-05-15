@@ -3,6 +3,7 @@
 section
   overflow: scroll
   padding: 0 2.875rem
+  padding-top: calc(40px + 2.5rem)
 
 *
   color: black
@@ -16,17 +17,8 @@ section
     text-transform: uppercase
     color: black
     font-weight: 500
-    font-size: 1.1rem
+    font-size: 1.25rem
     display: inline-block
-  .heading > p:nth-child(2)
-    font-size: 0.8rem
-    position: absolute
-    top: 50%
-    right: 0
-    transform: translate(0, -50%)
-    color: #2967ff
-    font-weight: 700
-    float: right
   .list    
     width: calc(100% + 5.75rem)
     height: 120px
@@ -63,6 +55,25 @@ section
         bottom: 0
         left: 10px
         width: calc(100% - 20px)
+    .none
+      width: calc(100% - 2.875rem - 40px);
+      height: calc(100% - 20px);
+      background: #eee;
+      margin: 20px
+      border-radius: 10px
+      color: black;
+      white-space: initial;
+      position: relative
+      &> p
+        color: #333
+        position: absolute
+        font-size: 1rem
+        font-weight: 500
+        top: 50%
+        left: 50%
+        width: 50%
+        transform: translate(-50%,-50%);
+        text-align: center;
 
 .schools
   margin-top: 2rem

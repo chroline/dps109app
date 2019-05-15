@@ -9,10 +9,6 @@ function createApp () {
     routes,
   });
 
-  if(Meteor.isClient) {
-    window.router = router;
-  }
-
   // sync the router with the vuex store.
   // this registers `store.state.route`
 
@@ -20,14 +16,18 @@ function createApp () {
 
   Vue.use(VueRouter);
 
-  return {
-    app: new Vue({
+  const vue = new Vue({
       el: '#app',
       router,
       ...App,
-    }),
-    router,
+    })
+
+  if(Meteor.isClient) {
+    window.router = router;
+    window.vue = vue;
   }
+
+  console.log("yeet");
 }
 
 export default createApp
