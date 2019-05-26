@@ -17,24 +17,25 @@
 								phone
 							</i>
 						</th>
-						<td>Extension</td>
+						<td>Phone</td>
+						<td>{{ phone }}</td>
 					</tr>
 					<tr>
 						<th scope="row">
 							<i class="material-icons">
-								mail
+								open_in_browser
 							</i>
 						</th>
-						<td>Email</td>
+						<td>Website</td>
+						<td>{{ phone }}</td>
 					</tr>
 				</tbody>
 			</table>
 		</section>
 	</v-app>
 </template>
-<!--
 <style scoped lang="sass" src="../sass/school.sass"></style>
-<!--<script>
+<script>
 import showdown from "showdown";
 
 export default {
@@ -42,11 +43,12 @@ export default {
   data() {
     return {
       name: "",
-      media: ""
+			media: "",
+			phone: "",
     };
   },
   async mounted() {
-    /*var desc = async function() {
+    var desc = async function() {
       return new Promise(async resolve => {
         let send;
         await Meteor.call(
@@ -59,7 +61,8 @@ export default {
       });
     }.bind(this);
     this.name = this.$route.params.name
-    this.media = this.$route.params.media*/
+    this.media = this.$route.params.media
+    this.phone = this.$route.params.phone
   }
 };
-</script>-->
+</script>
