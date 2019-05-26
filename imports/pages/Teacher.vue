@@ -43,8 +43,12 @@ export default {
   name: "Teacher",
   data() {
     return {
-      name: "Girl Example",
-      desc: "Hey Nic Raboy"
+      name: "",
+      desc: "",
+      teach: "",
+      ext: "",
+      media: "",
+      email: ""
     };
   },
   async mounted() {

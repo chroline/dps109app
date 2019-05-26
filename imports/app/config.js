@@ -1,33 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import App from './App.vue'
-import routes from './routes'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Vuetify from "vuetify";
 
-function createApp () {
+import App from "./App.vue";
+import routes from "./routes";
+
+import "vuetify/dist/vuetify.min.css";
+import "prevent-pull-refresh";
+
+function createApp() {
   const router = new VueRouter({
-    mode: 'history',
-    routes,
+    mode: "history",
+    routes
   });
 
-  // sync the router with the vuex store.
-  // this registers `store.state.route`
-
-  // Apollo
-
   Vue.use(VueRouter);
+  Vue.use(Vuetify);
+
+  Vue.component("back-button", {});
 
   const vue = new Vue({
-      el: '#app',
-      router,
-      ...App,
-    })
+    el: "#app",
+    router,
+    methods: {},
+    ...App
+  });
 
-  if(Meteor.isClient) {
-    window.router = router;
-    window.vue = vue;
-  }
-
-  console.log("yeet");
+  window.router = router;
+  window.vue = vue;
 }
 
-export default createApp
+export default createApp;

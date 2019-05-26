@@ -1,24 +1,48 @@
 <template>
-  <main>
-    <transition :name="transitionName">
-      <router-view />
-    </transition>
-  </main>
+  <v-app>
+    <div :class="{'bar':true,'transparent':clearHeader}">
+      <v-scroll-x-reverse-transition leave-absolute>
+        <p v-on:click="updateView('back')" v-if="prev"><BackButton /></p>
+      </v-scroll-x-reverse-transition>
+      <v-scroll-x-reverse-transition leave-absolute>
+        <p v-if="!prev && title == 'Home'">{{ title }}</p>
+      </v-scroll-x-reverse-transition>
+        <p v-if="!prev && title !== 'Home'"><BackButton />{{ title }}</p>
+    </div>
+    <main>
+      <transition :name="transitionName">
+        <router-view />
+      </transition>
+    </main>
+  </v-app>
 </template>
 
 <script>
+import $ from "jquery";
+import * as methods from "/imports/app/methods";
+import BackButton from "/imports/components/back-button.vue";
+
 export default {
   name: "App",
-  data() {
-    return {
-      transitionName: ""
-    };
+  data: {
+      transitionName: "",
+      fav: false,
+      prev: false,
+      title: 'Home1',
+      clearHeader: false
   },
+  components: {
+    BackButton
+  },
+  methods,
   watch: {
     $route(to, from) {
-      console.log(this.$route.params.prev);
-      this.transitionName = !this.$route.params.prev ? "next" : "prev";
+      this.barUpdate(this.$route.name, this);
+      this.transitionName = this.$route.params.prev == true ? "prev" : "next";
     }
+  },
+  created() {
+    this.barUpdate(this.$route.name, this);
   }
 };
 </script>
@@ -37,7 +61,13 @@ main {
   overflow-x: hidden;
 }
 
-main > section {
+main > div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+section {
   position: absolute;
   z-index: 0;
   background: white;

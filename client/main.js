@@ -1,65 +1,39 @@
 import { Meteor } from "meteor/meteor";
+import { Session } from "meteor/session";
+import $ from "jquery";
+
 import CreateApp from "/imports/app/config";
-import methods from "/imports/app/methods";
-import { Mongo } from "meteor/mongo";
+import { processHome } from "/imports/app/methods";
+import { Favorites } from "/imports/app/collections";
 
-import { Teachers } from "/imports/app/collections";
+const rem = (window.rem = (function rem() {
+  var html = document.getElementsByTagName("html")[0];
 
-$.extend(window, methods);
-
-window.rem = (function rem() {
-    var html = document.getElementsByTagName("html")[0];
-
-    return function() {
-        return parseInt(window.getComputedStyle(html)["fontSize"]);
-    };
-})();
-
-window.toRem = length => {
-    return parseInt(length) / rem();
-};
-
-const backButton = `<i class="material-icons" data-back="true">arrow_back_ios</i>`;
-const star = `<div class="star"><i class="material-icons">star_outline</i></div>`;
+  return function() {
+    return parseInt(window.getComputedStyle(html)["fontSize"], 10);
+  };
+})());
 
 Meteor.startup(() => {
-    var g = Meteor.subscribe("teachers",function(r){
-        console.log(r)
-    });
-    CreateApp();
-    $("section").on("scroll", function() {
-        if ($("section").scrollTop() >= 1.9 * rem()) {
-            $(".bar").addClass("backshadow");
-        } else {
-            $(".bar").removeClass("backshadow");
-        }
-    });
+  Session.set("favorites.loaded", false);
+  Meteor.subscribe("favorites", {
+    onReady: function() {
+      window.Favorites = Favorites;
+      Favorites.find().forEach(function(item) {
+        console.log("unfair");
+        console.log(item);
+      });
+      Session.set("favorites.loaded", true);
+    }
+  });
+
+  CreateApp();
+
+  $("section").on("scroll", function() {
+    if ($("section").scrollTop() >= 1.9 * rem()) {
+      $(".bar").addClass("backshadow");
+    } else {
+      $(".bar").removeClass("backshadow");
+    }
+  });
 });
-
-window.barUpdate = page => {
-    switch (page) {
-        case "Home":
-            $(".bar").removeClass("transparent");
-            $(".bar p").html("Home");
-            $(".bar .star").remove();
-            break;
-        case "Teacher":
-            $(".bar").addClass("transparent");
-            $(".bar p").html(backButton);
-            $(".bar p i").click(function(event) {
-                console.log("yeet");
-                updateView("back", event.originalEvent.target);
-            });
-            $(".bar").append(star);
-            break;
-    }
-};
-
-window.breadcrumbs = [
-    {
-        name: "Home",
-        params: {
-            prev: true
-        }
-    }
-];
