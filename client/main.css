@@ -15975,10 +15975,6 @@ hr {
     font-size: 4.25rem;
 }
 
-.icon-xl+.icon-text {
-    width: calc(100% - $icon-size-xl - 1);
-}
-
 .icon-lg {
     width: 3.7rem;
     height: 3.7rem;
