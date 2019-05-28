@@ -1,0 +1,9 @@
+{
+    "name": "DPS109",
+    "theme_color": "#df2929",
+    "background_color": "#df2929",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+}

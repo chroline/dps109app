@@ -69,7 +69,6 @@ function dragUp(yaxis) {
 
   var blurAmount =
     (event.touches[0].pageY - ylocation) / ((ylocation * 0.75 - 120) / 0.75);
-  console.log(0 + (1 - -blurAmount));
   $(".favorites").css("opacity", 0 + (1 - -blurAmount));
   $(".frame").css("opacity", -blurAmount - 1);
 }
@@ -189,7 +188,7 @@ setInterval(function() {
   slideshow();
 }, 14000);
 
-var content = {
+window.content = {
   up: function() {
     $(".content").data("show", "true");
     $(".content").animate(
@@ -200,6 +199,7 @@ var content = {
       "easeOutCirc",
       () => {
         $(".favorites").hide();
+        $(".frame").show();
       }
     );
     $(".overlay").addClass("show");

@@ -4,7 +4,7 @@
 			class="header-img"
 			v-bind:style="'background-image: url(' + media + ')'"
 		>
-			<div class="info">
+			<div class="name">
 				<h1>{{ name }}</h1>
 				<p>{{ teach }}</p>
 			</div>
@@ -50,7 +50,7 @@ export default {
       media: "",
       email: ""
     };
-  },
+	},
   async mounted() {
     var desc = async function() {
       return new Promise(async resolve => {
