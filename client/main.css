@@ -15989,10 +15989,6 @@ hr {
     font-size: 2.95rem;
 }
 
-.icon-lg+.icon-text {
-    width: calc(100% - $icon-size-lg - 1);
-}
-
 .icon-sm {
     width: 1.875rem;
     height: 1.875rem;
@@ -16001,10 +15997,6 @@ hr {
 .icon-sm i,
 .icon-sm svg {
     font-size: 1.125rem;
-}
-
-.icon-sm+.icon-text {
-    width: calc(100% - $icon-size-sm - 1);
 }
 
 .icon-shape {
