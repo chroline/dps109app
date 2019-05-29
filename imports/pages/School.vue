@@ -55,6 +55,7 @@ export default {
     updateView
   },
   async mounted() {
+    console.log(this.$route.params);
     var desc = async function() {
       return new Promise(async resolve => {
         let send;

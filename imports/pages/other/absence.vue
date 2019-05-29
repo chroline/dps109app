@@ -45,6 +45,9 @@
           value=""
         ></v-textarea>
       </v-flex>
+    <v-flex xs12>
+      <v-btn color="success">Send to nurse</v-btn>
+      </v-flex>
   </section>
 </template>
 

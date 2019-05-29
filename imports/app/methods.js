@@ -7,12 +7,19 @@ export const updateView = async(type, el) => {
         return new Promise(async resolve => {
             switch (type) {
                 case "teacher":
-                    let list = await Teachers().getTeacher(el[0], el[1]);
+                case "Teacher":
+                    let list = await Teachers().getTeacher(
+                        el[0],
+                        el[1]
+                    );
                     list.fields.id = list.id;
                     resolve(list.fields);
                     break;
                 case "school":
-                    resolve(Schools[el]);
+                case "School":
+                    var data = Schools[el];
+                    data.name = el;
+                    resolve(data);
                     break;
                 case "directory":
                     resolve({});
@@ -23,6 +30,7 @@ export const updateView = async(type, el) => {
                     });
                     break;
                 default:
+                    console.log("idk what " + type)
                     resolve({});
                     break;
             }
@@ -37,6 +45,7 @@ export const updateView = async(type, el) => {
             let page;
             switch (type) {
                 case "teacher":
+                case "Teacher":
                     params.prev = false;
                     page = {
                         name: "Teacher",
@@ -45,6 +54,7 @@ export const updateView = async(type, el) => {
                     resolve(page);
                     break;
                 case "school":
+                case "School":
                     params.prev = false;
                     page = {
                         name: "School",
@@ -70,12 +80,16 @@ export const updateView = async(type, el) => {
                     break;
                 case "back":
                     window.breadcrumbs.pop();
-                    page = window.breadcrumbs[window.breadcrumbs.length - 1];
+                    page =
+                        window.breadcrumbs[window.breadcrumbs.length - 1];
                     page.params.prev = true;
                     resolve(page);
                     break;
                 default:
-                    resolve({name:type,params:{name:type.replace(/_/g," ")}});
+                    resolve({
+                        name: type,
+                        params: { name: type.replace(/_/g, " ") }
+                    });
                     break;
             }
         });
@@ -116,7 +130,7 @@ export const barUpdate = (page, vue) => {
         default:
             vue.fav = false;
             vue.prev = true;
-            vue.title = page.replace(/_/g," ");
+            vue.title = page.replace(/_/g, " ");
             vue.clearHeader = false;
             break;
     }
@@ -125,10 +139,10 @@ export const barUpdate = (page, vue) => {
 export const addFavorite = async() => {
     Meteor.call("addFavorite", [
         window.breadcrumbs[window.breadcrumbs.length - 1]
-    ],function() {
+    ], function() {
         Meteor.call("getFavorites", function(e, favorites) {
-          console.log("update!!");
-          Meteor.call("updateFavorites", favorites);
+            console.log("update!!");
+            Meteor.call("updateFavorites", favorites);
         });
     });
 }
@@ -136,10 +150,10 @@ export const addFavorite = async() => {
 export const removeFavorite = async(id) => {
     Meteor.call("removeFavorite", [
         id
-    ],function() {
+    ], function() {
         Meteor.call("getFavorites", function(e, favorites) {
-          console.log("update!!");
-          Meteor.call("updateFavorites", favorites);
+            console.log("update!!");
+            Meteor.call("updateFavorites", favorites);
         });
     });
 }

@@ -44,6 +44,7 @@ Meteor.startup(() => {
                     }
                 }
                 var el = `<button onclick="updateView('${page.name}','${page.params.name}');content.up()" class="bth-${Colors[page.params.name]}">${name}</button>`;
+                console.log(el);
                 $(".favorites").append(el);
             });
         }

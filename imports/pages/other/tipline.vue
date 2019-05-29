@@ -24,8 +24,12 @@
     <v-checkbox
       v-model="checkbox"
       label="Include location?"
+      color="green darken-1"
     ></v-checkbox>
         </v-flex>
+    <v-flex xs12>
+      <v-btn color="success">Submit Tip</v-btn>
+      </v-flex>
   </section>
 </template>
 
